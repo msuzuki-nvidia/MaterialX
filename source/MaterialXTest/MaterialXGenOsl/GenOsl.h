@@ -45,10 +45,8 @@ class OslShaderGeneratorTester : public GenShaderUtil::ShaderGeneratorTester
 
     void addSkipFiles() override
     {
-        _skipFiles.insert("standard_surface_onyx_hextiled.mtlx");
-        _skipFiles.insert("hextiled.mtlx");
-        _skipFiles.insert("flake.mtlx");
-        _skipFiles.insert("flake_surfaceshader.mtlx");
+        // No additional files are skipped
+        ShaderGeneratorTester::addSkipFiles();
     }
 
     // Ignore light shaders in the document for OSL
@@ -68,7 +66,7 @@ class OslShaderGeneratorTester : public GenShaderUtil::ShaderGeneratorTester
         whiteList =
         {
             "displacementshader", "volumeshader",
-            "IM_constant_", "IM_dot_", "IM_angle", "IM_geompropvalue", "IM_geompropvalueuniform"
+            "IM_constant_", "IM_dot_", "IM_angle", "IM_geompropvalue", "IM_geompropvalueuniform", "IM_osl_set_ci"
         };
         ShaderGeneratorTester::getImplementationWhiteList(whiteList);
     }
